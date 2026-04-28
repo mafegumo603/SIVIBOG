@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --danger: #ef4444;
+  --border: #334155;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+.layout {
+  padding: 1rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.card {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--primary);
+}
+
+/* Chat Section */
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: var(--bg-color);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 90%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  white-space: pre-wrap; /* Preserve line breaks for agent lists */
+}
+
+.message.user {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.message.agente {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-color);
+  color: var(--text-main);
+}
+
+.btn {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  background: var(--primary);
+  color: white;
+}
+
+.btn:hover {
+  background: var(--primary-hover);
+}
+
+.btn.util {
+  background: var(--border);
+}
+
+.btn.util:hover {
+  background: #475569;
+}
+
+/* Map Section */
+.map-container {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 500px;
+  position: relative;
+  background: #0f172a;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.layer-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Dashboard Section */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.kpi {
+  background: var(--bg-color);
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.kpi b {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.chart {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+/* Popups */
+.map-popup {
+  color: #333;
+  font-family: 'Inter', sans-serif;
+  min-width: 150px;
+}
+
+.map-popup h3 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: var(--danger);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+}
+
+.map-popup p {
+  margin: 3px 0;
+  font-size: 0.9rem;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+}
